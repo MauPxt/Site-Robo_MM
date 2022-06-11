@@ -208,7 +208,160 @@ table {
   --mm-yellow-two: #fad300;
   --mm-peach: #ffbd59;
   --mm-green: #008037;
+  --mm-green-two: #015a27;
   --mm-black: #1a1822;
 
   background: var(--background);
+}
+
+body {
+  background: linear-gradient(-45deg, var(--mm-green), var(--mm-peach), var(--mm-green-two), var(--mm-peach));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1{
+  margin: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+  color: var(--mm-green-two);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  background: var(--diamond);
+  border-radius: 1rem;
+}
+
+.center h1 {
+  text-align: center;
+  padding: 0 0 2rem 0;
+  border-bottom: 1px solid silver;
+}
+
+.center form {
+  padding: 0 2.5rem;
+  box-sizing: border-box;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 1.8rem 0;
+}
+
+.txt_field input {
+  width: 100%;
+  padding: 0 0.3rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.txt_field span::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--background)
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: var(--background)
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+
+.pass{
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+
+.pass:hover{
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: var(--mm-green-two);
+  border-color: var(--mm-green-two);
+  border-radius: 25px;
+  font-size: 18px;
+  color: var(--mm-yellow-two);
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  border-color: var(--mm-yellow-two);
+  transition: .5s;
+  transform: scale(1.05);
+}
+
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #666666;
+}
+
+.signup_link a {
+  color: var(--mm-green-two);
+  text-decoration: none;
+}
+
+.signup_link a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 410px) {
+  .center{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
 }
