@@ -1,2 +1,2 @@
 # Site-Robo_MM
- O repositório do site do robo mm
+ Repositório criado para inserir elementos do front-end da plataforma MM
